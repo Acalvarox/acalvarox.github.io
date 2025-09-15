@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ebuka Anaenugwu – Portfolio</title>
+  <meta name="description" content="Projects and initiatives by Ebuka (Alvaro) Anaenugwu – engineering, ag‑tech, HVAC, and more." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--ring: 0 0 0 3px rgba(59,130,246,.3)}
+    html{font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"}
+    .glass{backdrop-filter:saturate(180%) blur(10px); background:rgba(255,255,255,.08);}
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100">
+  <!-- NAV -->
+  <header class="sticky top-0 z-20 border-b border-white/10 bg-slate-950/70 glass">
+    <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+      <a href="#" class="font-extrabold tracking-tight text-xl">EA<span class="text-blue-400">•</span>Portfolio</a>
+      <nav class="flex gap-5 text-sm">
+        <a href="#projects" class="hover:text-blue-300">Projects</a>
+        <a href="#about" class="hover:text-blue-300">About</a>
+        <a href="#contact" class="hover:text-blue-300">Contact</a>
+        <a id="resumeLink" class="rounded-full bg-blue-500/90 px-3 py-1 font-semibold hover:bg-blue-400/90 shadow">Resume →</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <svg aria-hidden="true" class="opacity-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#3b82f6"/>
+            <stop offset="100%" stop-color="#22d3ee"/>
+          </linearGradient>
+        </defs>
+        <circle cx="120" cy="120" r="120" fill="url(#g)"/>
+        <circle cx="680" cy="260" r="160" fill="url(#g)"/>
+      </svg>
+    </div>
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+          Hi, I’m <span class="text-blue-400">Ebuka (Alvaro)</span> —
+          I build useful things.
+        </h1>
+        <p class="mt-5 text-slate-300 text-lg md:text-xl">
+          Mechanical engineer @ MSU crafting systems across ag‑tech, HVAC, vehicles, and learning tools. This site tracks my current builds and completed projects.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#projects" class="rounded-xl bg-slate-100 text-slate-900 px-5 py-3 font-semibold hover:opacity-90">See Projects</a>
+          <a href="#contact" class="rounded-xl border border-white/20 px-5 py-3 font-semibold hover:bg-white/5">Get in Touch</a>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="rounded-2xl border border-white/10 p-4 glass">
+          <p class="text-sm text-slate-300">Focus</p>
+          <ul class="mt-2 space-y-1 text-slate-200">
+            <li>Ag‑tech & processing</li>
+            <li>HVAC & energy</li>
+            <li>Automotive / motorsport</li>
+            <li>AI for learning</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-white/10 p-4 glass">
+          <p class="text-sm text-slate-300">Highlights</p>
+          <ul class="mt-2 space-y-1 text-slate-200">
+            <li>Mini tractor prototype</li>
+            <li>Rice parboiler v1</li>
+            <li>First Solar ARC project</li>
+            <li>DG3 capstone (in‑progress)</li>
+          </ul>
+        </div>
+        <div class="col-span-2 rounded-2xl border border-white/10 p-4 glass">
+          <p class="text-sm text-slate-300">Narrative</p>
+          <p class="mt-2 text-slate-200">I ship scrappy MVPs, then refine. Each project is framed as an initiative for Africa first—practical, repairable, and scalable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="mx-auto max-w-6xl px-4 py-14">
+    <div class="flex items-end justify-between gap-4">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-extrabold">Projects</h2>
+        <p class="mt-2 text-slate-300">Toggle between <span class="font-semibold">Current</span> and <span class="font-semibold">Completed</span>.</p>
+      </div>
+      <div class="inline-flex rounded-2xl border border-white/10 overflow-hidden">
+        <button id="tab-current" class="px-4 py-2 text-sm font-semibold bg-white/10">Current</button>
+        <button id="tab-completed" class="px-4 py-2 text-sm font-semibold hover:bg-white/10">Completed</button>
+      </div>
+    </div>
+
+    <div id="grid" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="mx-auto max-w-4xl px-4 py-16">
+    <h2 class="text-3xl md:text-4xl font-extrabold">About</h2>
+    <p class="mt-4 text-slate-300 leading-relaxed">
+      I like building systems that survive heat, dust, and tight budgets. My approach: keep it modular, field‑repairable, and honest about trade‑offs. If you want a polished demo that actually works outside a lab, we’ll get along.
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="mx-auto max-w-4xl px-4 pb-24">
+    <h2 class="text-3xl md:text-4xl font-extrabold">Contact</h2>
+    <div class="mt-6 grid sm:grid-cols-2 gap-6">
+      <a id="emailLink" class="group rounded-2xl border border-white/10 p-5 hover:bg-white/5">
+        <p class="font-semibold">Email</p>
+        <p class="text-slate-300 group-hover:underline">your.name@domain.com</p>
+      </a>
+      <a id="githubLink" class="group rounded-2xl border border-white/10 p-5 hover:bg-white/5">
+        <p class="font-semibold">GitHub</p>
+        <p class="text-slate-300 group-hover:underline">github.com/your‑username</p>
+      </a>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10 py-8 text-center text-sm text-slate-400">
+    © <span id="year"></span> Ebuka Anaenugwu. Built on GitHub Pages.
+  </footer>
+
+  <script>
+    // ====== USER CONFIG (edit these) ======
+    const CONFIG = {
+      resume_url: "#", // e.g. link to Google Drive or PDF
+      email: "your.name@domain.com",
+      github: "https://github.com/your-username",
+      // Current projects
+      current: [
+        {
+          title: "DG3 – Capstone (In Progress)",
+          blurb: "Design + build journey; systems engineering + validation.",
+          tags: ["Capstone", "Systems"],
+          link: "#"
+        },
+        {
+          title: "Mini Tractor – Agronox",
+          blurb: "Skeletal mini tractor with modular implements; field‑repairable.",
+          tags: ["Ag‑tech", "Prototype"],
+          link: "#"
+        },
+        {
+          title: "AGX Farm Layout",
+          blurb: "Efficient farm system with processing flow and logistics plan.",
+          tags: ["Ag‑systems"],
+          link: "#"
+        }
+      ],
+      // Completed projects
+      completed: [
+        {
+          title: "Rice Parboiler v1",
+          blurb: "Outdoor steam gen + insulated loop; prototype docs.",
+          tags: ["Process", "Energy"],
+          link: "#"
+        },
+        {
+          title: "First Solar – ARC Project",
+          blurb: "Contributed to reliability/analysis tasks (public-safe summary).",
+          tags: ["Industry"],
+          link: "#"
+        },
+        {
+          title: "HVAC Design Project",
+          blurb: "Load calcs, equipment selection, and control concept.",
+          tags: ["HVAC"],
+          link: "#"
+        }
+      ]
+    };
+
+    // ====== RENDERING LOGIC ======
+    const grid = document.getElementById('grid');
+    const tabCur = document.getElementById('tab-current');
+    const tabCom = document.getElementById('tab-completed');
+    const year = document.getElementById('year');
+    const resumeLink = document.getElementById('resumeLink');
+    const emailLink = document.getElementById('emailLink');
+    const githubLink = document.getElementById('githubLink');
+
+    function tagChip(label){
+      return `<span class="inline-flex items-center rounded-full border border-white/15 px-2 py-0.5 text-xs">${label}</span>`
+    }
+
+    function card(item){
+      return `
+      <a href="${item.link}" target="_blank" class="block rounded-2xl border border-white/10 p-5 hover:bg-white/5 transition">
+        <div class="flex items-start justify-between gap-4">
+          <h3 class="text-lg font-bold">${item.title}</h3>
+          <div class="flex gap-1">${(item.tags||[]).map(tagChip).join('')}</div>
+        </div>
+        <p class="mt-2 text-slate-300">${item.blurb}</p>
+      </a>`
+    }
+
+    function draw(which='current'){
+      grid.innerHTML = (CONFIG[which]||[]).map(card).join('');
+      tabCur.classList.toggle('bg-white/10', which==='current');
+      tabCom.classList.toggle('bg-white/10', which==='completed');
+    }
+
+    // init
+    draw('current');
+    tabCur.onclick = () => draw('current');
+    tabCom.onclick = () => draw('completed');
+    year.textContent = new Date().getFullYear();
+
+    // Links
+    resumeLink.href = CONFIG.resume_url || '#';
+    emailLink.href = `mailto:${CONFIG.email}`;
+    emailLink.querySelector('p:nth-child(2)').textContent = CONFIG.email;
+    githubLink.href = CONFIG.github;
+    githubLink.querySelector('p:nth-child(2)').textContent = CONFIG.github.replace('https://','');
+  </script>
+</body>
+</html>
