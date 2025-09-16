@@ -4,118 +4,86 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alvaro C. Anaenugwu – Portfolio</title>
-  <meta name="description" content="Projects and initiatives by Alvaro Chukwuebuka Anaenugwu – engineering, ag‑tech, HVAC, and more." />
+  <meta name="description" content="Projects and initiatives by Alvaro Chukwuebuka Anaenugwu." />
+
+  <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Inter font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
- <style>
-  :root {
-    --ring: 0 0 0 3px rgba(59,130,246,.3);
-  }
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-  html {
-    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 
-      "Apple Color Emoji", "Segoe UI Emoji";
-  }
-
-  .glass {
-    backdrop-filter: saturate(180%) blur(10px);
-    background: rgba(255,255,255,.08);
-  }
-
-  body {
-    background: linear-gradient(180deg, #d9d9d9 0%, #bfbfbf 45%, #e6e6e6 100%);
-    color: #111111;
-  }
-</style>
+  <style>
+    html { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+    /* Silver background + matte black text */
+    body {
+      background: linear-gradient(180deg, #d9d9d9 0%, #bfbfbf 45%, #e6e6e6 100%);
+      color: #111111;
+    }
+    /* Card base for strong contrast on silver */
+    .card {
+      background: #ffffff;
+      color: #111111;
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 0.75rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+    .chip {
+      display:inline-flex; align-items:center;
+      padding: 2px 8px; font-size: 12px; border-radius: 9999px;
+      border: 1px solid rgba(0,0,0,.2);
+    }
+    a.btn-black { background:#000; color:#fff; }
+    a.btn-black:hover { opacity:.9; }
+    a.btn-ghost { background:#fff; color:#000; border:1px solid rgba(0,0,0,.2); }
+    a.btn-ghost:hover { background:#f6f6f6; }
+  </style>
 </head>
 
+<body class="min-h-screen">
   <!-- NAV -->
-  <header class="sticky top-0 z-20 border-b border-white/10 bg-slate-950/70 glass">
+  <header class="sticky top-0 z-20 backdrop-blur bg-white/60 border-b border-black/10">
     <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-      <a href="#" class="font-extrabold tracking-tight text-xl">EA<span class="text-blue-400">•</span>Portfolio</a>
-      <nav class="flex gap-5 text-sm">
-        <a href="#projects" class="hover:text-blue-300">Projects</a>
-        <a href="#about" class="hover:text-blue-300">About</a>
-        <a href="#contact" class="hover:text-blue-300">Contact</a>
-        <a id="resumeLink" class="rounded-full bg-blue-500/90 px-3 py-1 font-semibold hover:bg-blue-400/90 shadow">Resume →</a>
+      <a href="#" class="font-extrabold tracking-tight text-xl">AC<span class="text-black/60">·</span>Portfolio</a>
+      <nav class="flex gap-5 text-sm font-semibold">
+        <a href="#projects" class="hover:underline">Projects</a>
+        <a href="#about" class="hover:underline">About</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+        <a id="resumeLink" class="btn-black px-3 py-1 rounded-md">Resume →</a>
       </nav>
     </div>
   </header>
 
   <!-- HERO -->
-  <section class="relative overflow-hidden">
-    <div class="absolute inset-0 -z-10">
-      <svg aria-hidden="true" class="opacity-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
-        <defs>
-          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#3b82f6"/>
-            <stop offset="100%" stop-color="#22d3ee"/>
-          </linearGradient>
-        </defs>
-        <circle cx="120" cy="120" r="120" fill="url(#g)"/>
-        <circle cx="680" cy="260" r="160" fill="url(#g)"/>
-      </svg>
-    </div>
-    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
-      <div>
-        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
-         Alvaro Chukwuebuka Anaenugwu</span> 
-          </h1>
-        <p class="mt-5 text-black text-lg md:text-xl">
-         I am a mechanical engineer 'trainee'<br />
-          Graduation drops the “trainee” in December.<br /> 
-          The responsibility is already mine,<br />
-          Mechanical engineering is my palette,<br />
-          The world and its problems, my canvas,<br />
-          The systems I design, my masterpiece.<br />
-        </p>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="#projects" class="rounded-xl bg-slate-100 text-slate-900 px-5 py-3 font-semibold hover:opacity-90">See Projects</a>
-          <a href="#contact" class="rounded-xl border border-white/20 px-5 py-3 font-semibold hover:bg-white/5">Get in Touch</a>
-        </div>
-      </div>
-      <div class="grid grid-cols-2 gap-4">
-        <div class="rounded-2xl border border-white/10 p-4 glass">
-          <p class="mt-5 text-black text-lg md:text-xl">Focus</p>
-          <ul class="mt-2 space-y-1 text-black">
-            <li>Energy & Sustainability</li>
-            <li>Manufacturing</li>
-            <li>Automotive / motorsport</li>
-            <li>Ag‑tech & Processing </li>
-            <li>AI for learning</li>
-          </ul>
-        </div>
-        <div class="rounded-2xl border border-white/10 p-4 glass">
-          <p class="mt-5 text-black text-lg md:text-xl">The Highlights</p>
-          <ul class="mt-2 space-y-1 text-black">
-            <li>Mini tractor prototype</li>
-            <li>Rice parboiler v1</li>
-            <li>First Solar ARC project</li>
-            <li>DG3 capstone (in‑progress)</li>
-          </ul>
-        </div>
-        <div class="col-span-2 rounded-2xl border border-white/10 p-4 glass">
-          <p class="mt-5 text-black text-lg md:text-xl">Ethos</p>
-          <p class="mt-2 space-y-1 text-black">— pulling concepts from anywhere they fit and shaping them into solutions that work. That’s how I think, and that’s how I build.</p>
-        </div>
-      </div>
+  <section class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+      Alvaro Chukwuebuka Anaenugwu
+    </h1>
+
+    <p class="mt-6 text-lg md:text-xl leading-8">
+      I am a mechanical engineer 'trainee'<br />
+      Graduation drops the “trainee” in December.<br />
+      The responsibility is already mine,<br />
+      Mechanical engineering is my palette,<br />
+      The world and its problems, my canvas,<br />
+      The systems I design, my masterpiece.
+    </p>
+
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a href="#projects" class="btn-black px-5 py-3 rounded-md font-semibold">See Projects</a>
+      <a href="#contact" class="btn-ghost px-5 py-3 rounded-md font-semibold">Get in Touch</a>
     </div>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects" class="mx-auto max-w-6xl px-4 py-14">
     <div class="flex items-end justify-between gap-4">
-      <div>
-        <h2 class="text-3xl md:text-4xl font-extrabold">Projects</h2>
-        
-      </div>
+      <h2 class="text-3xl md:text-4xl font-extrabold">Projects</h2>
       <div class="inline-flex rounded-2xl border border-black/20 overflow-hidden">
-  <button id="tab-current"   class="px-4 py-2 text-sm font-semibold bg-black text-white">Current</button>
-  <button id="tab-completed" class="px-4 py-2 text-sm font-semibold bg-white text-black">Completed</button>
-</div>
-
+        <button id="tab-current"   class="px-4 py-2 text-sm font-semibold bg-black text-white">Current</button>
+        <button id="tab-completed" class="px-4 py-2 text-sm font-semibold bg-white text-black">Completed</button>
+      </div>
     </div>
 
     <div id="grid" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
@@ -124,8 +92,11 @@
   <!-- ABOUT -->
   <section id="about" class="mx-auto max-w-4xl px-4 py-16">
     <h2 class="text-3xl md:text-4xl font-extrabold">About</h2>
-    <p class="mt-4 text-black leading-relaxed">
-      At my final presentation during my internship with SmithGroup, I shared an idea I was working on — the integrated farm. I wasn’t just running calculations or using all the buzzwords I knew. I realized I had built a system: one that used resources fully, wasted nothing, and worked as a whole. That moment reminded me of how I think, figuring out the root problem, going outside my comfort zone to connect relevant dots and finally pushing beyond boundaries.
+    <p class="mt-4 leading-relaxed">
+      At my final presentation during my internship with SmithGroup, I shared an idea I was working on — the integrated farm.
+      I wasn’t just running calculations or using all the buzzwords I knew. I realized I had built a system: one that used
+      resources fully, wasted nothing, and worked as a whole. That moment reminded me of how I think—start at the root
+      problem, connect the right dots across disciplines, then push past boundaries.
     </p>
   </section>
 
@@ -133,112 +104,129 @@
   <section id="contact" class="mx-auto max-w-4xl px-4 pb-24">
     <h2 class="text-3xl md:text-4xl font-extrabold">Contact</h2>
     <div class="mt-6 grid sm:grid-cols-2 gap-6">
-      <a id="emailLink" class="group rounded-2xl border border-white/10 p-5 hover:bg-white/5">
+      <a id="emailLink" class="card p-5">
         <p class="font-semibold">Email</p>
-        <p class="text-text-black group-hover:underline">anaenugw@msu.edu</p>
+        <p class="mt-1 underline" id="emailText">anaenugw@msu.edu</p>
       </a>
-         </div>
+      <a id="resumeCard" class="card p-5">
+        <p class="font-semibold">Resume</p>
+        <p class="mt-1 underline" id="resumeText">Download PDF</p>
+      </a>
+    </div>
   </section>
 
-  <footer class="border-t border-white/10 py-8 text-center text-sm text-slate-400">
+  <footer class="border-t border-black/10 py-8 text-center text-sm text-black/70">
     © <span id="year"></span> Alvaro Chukwuebuka Anaenugwu. Built on GitHub Pages.
   </footer>
 
+  <!-- ===== USER CONFIG ===== -->
   <script>
-// ===== USER CONFIG (edit these) =====
-const CONFIG = {
-  resume_url: "AC_Anenugwu_Resume.pdf",
-  email: "anaenugw@msu.edu",
+    const CONFIG = {
+      resume_url: "AC_Anenugwu_Resume.pdf",
+      email: "anaenugw@msu.edu",
 
-  // Current projects
-  current: [
-    {
-      title: "DG3 – Capstone (In Progress)",
-      blurb: "Capstone project — a dish drying system that makes reusable takeout practical.",
-      tags: ["Capstone", "Systems", "Sustainability"],
-      link: "#",
-    },
-    {
-      title: "Mini Tractor – Agronox",
-      blurb: "Skeletal mini tractor with modular implements; field-repairable.",
-      tags: ["Ag-tech", "Prototype"],
-      link: "#",
-    },
-    {
-      title: "AGX Farm Layout",
-      blurb: "Farm blueprint uniting crops and poultry into one system — waste becomes input, and every resource is used.",
-      tags: ["Ag-systems", "Sustainability"],
-      link: "#",
-    },
-    {
-      title: "Rice Parboiler v1",
-      blurb: "Developing a modular rice parboiler with steam circulation and heat recovery for smallholder farms.",
-      tags: ["Process", "Energy"],
-      link: "#",
-    },
-  ],
+      current: [
+        {
+          title: "DG3 – Capstone (In Progress)",
+          blurb: "Capstone project — a dish drying system that makes reusable takeout practical.",
+          tags: ["Capstone", "Systems", "Sustainability"],
+          link: "#"
+        },
+        {
+          title: "Mini Tractor – Agronox",
+          blurb: "Skeletal mini tractor with modular implements; field-repairable.",
+          tags: ["Ag-tech", "Prototype"],
+          link: "#"
+        },
+        {
+          title: "AGX Integrated Farm System",
+          blurb: "Farm blueprint uniting crops and poultry into one system — waste becomes input, and every resource is used.",
+          tags: ["Ag-systems", "Sustainability"],
+          link: "#"
+        },
+        {
+          title: "Rice Parboiler v1",
+          blurb: "Developing a modular rice parboiler with steam circulation and heat recovery for smallholder farms.",
+          tags: ["Process", "Energy"],
+          link: "#"
+        }
+      ],
 
-  // Completed projects
-  completed: [
-    {
-      title: "First Solar – ARC Project",
-      blurb: "Worked on reliability analysis within the ARC project at First Solar — focusing on root-cause investigations and solutions.",
-      tags: ["Industry"],
-      link: "#",
-    },
-    {
-      title: "ME 470 Design Project – Basketball Launcher",
-      blurb: "Designed and prototyped a basketball launcher with full CAD modeling, mechanical analysis, and physical testing.",
-      tags: ["Design", "CAD", "Prototype"],
-      link: "#",
-    },
-  ],
-};  // 
-</script>
+      completed: [
+        {
+          title: "First Solar – ARC Project",
+          blurb: "Worked on reliability analysis within the ARC project at First Solar — focusing on root-cause investigations and solutions.",
+          tags: ["Industry"],
+          link: "#"
+        },
+        {
+          title: "ME 470 Design Project – Basketball Launcher",
+          blurb: "Designed and prototyped a basketball launcher with full CAD modeling, mechanical analysis, and physical testing.",
+          tags: ["Design", "CAD", "Prototype"],
+          link: "#"
+        }
+      ]
+    };
+  </script>
 
+  <!-- ===== RENDERING LOGIC ===== -->
+  <script>
+    // DOM refs
+    const grid        = document.getElementById('grid');
+    const tabCur      = document.getElementById('tab-current');
+    const tabCom      = document.getElementById('tab-completed');
+    const year        = document.getElementById('year');
+    const resumeLink  = document.getElementById('resumeLink');
+    const emailLink   = document.getElementById('emailLink');
+    const emailText   = document.getElementById('emailText');
+    const resumeCard  = document.getElementById('resumeCard');
+    const resumeText  = document.getElementById('resumeText');
 
-    // ====== RENDERING LOGIC ======
-    const grid = document.getElementById('grid');
-    const tabCur = document.getElementById('tab-current');
-    const tabCom = document.getElementById('tab-completed');
-    const year = document.getElementById('year');
-    const resumeLink = document.getElementById('resumeLink');
-    const emailLink = document.getElementById('emailLink');
-    const githubLink = document.getElementById('githubLink');
+    // Helpers
+    const chip = (t) => `<span class="chip">${t}</span>`;
 
-    function tagChip(label){
-      return `<span class="inline-flex items-center rounded-full border border-white/15 px-2 py-0.5 text-xs">${label}</span>`
-    }
-
-    function card(item){
+    function card(p){
+      const tags = (p.tags || []).map(chip).join(' ');
+      const link = (p.link && p.link !== '#')
+        ? `<a href="${p.link}" target="_blank" class="mt-4 inline-block font-semibold underline">Read more</a>`
+        : '';
       return `
-      <a href="${item.link}" target="_blank" class="block rounded-2xl border border-white/10 p-5 hover:bg-white/5 transition">
-        <div class="flex items-start justify-between gap-4">
-          <h3 class="text-lg font-bold">${item.title}</h3>
-          <div class="flex gap-1">${(item.tags||[]).map(tagChip).join('')}</div>
-        </div>
-        <p class="mt-2 text-slate-300">${item.blurb}</p>
-      </a>`
+        <div class="card p-5">
+          <h3 class="text-lg font-semibold">${p.title}</h3>
+          <p class="mt-2 text-sm">${p.blurb}</p>
+          <div class="mt-3 flex flex-wrap gap-2">${tags}</div>
+          ${link}
+        </div>`;
     }
 
-    function draw(which='current'){
-      grid.innerHTML = (CONFIG[which]||[]).map(card).join('');
-      tabCur.classList.toggle('bg-white/10', which==='current');
-      tabCom.classList.toggle('bg-white/10', which==='completed');
+    function render(which='current'){
+      grid.innerHTML = (CONFIG[which] || []).map(card).join('');
+      // tab state
+      if (which === 'current') {
+        tabCur.className = "px-4 py-2 text-sm font-semibold bg-black text-white";
+        tabCom.className = "px-4 py-2 text-sm font-semibold bg-white text-black";
+      } else {
+        tabCom.className = "px-4 py-2 text-sm font-semibold bg-black text-white";
+        tabCur.className = "px-4 py-2 text-sm font-semibold bg-white text-black";
+      }
     }
 
-    // init
-    draw('current');
-    tabCur.onclick = () => draw('current');
-    tabCom.onclick = () => draw('completed');
+    // Init
+    render('current');
     year.textContent = new Date().getFullYear();
+
+    // Tabs
+    tabCur.addEventListener('click', () => render('current'));
+    tabCom.addEventListener('click', () => render('completed'));
 
     // Links
     resumeLink.href = CONFIG.resume_url || '#';
+    resumeCard.href = CONFIG.resume_url || '#';
+    resumeCard.setAttribute('target','_blank');
+    resumeText.textContent = CONFIG.resume_url ? "Open resume (PDF)" : "Resume (coming soon)";
+
     emailLink.href = `mailto:${CONFIG.email}`;
-    emailLink.querySelector('p:nth-child(2)').textContent = CONFIG.email;
-    githubLink.href = CONFIG.github;
-    githubLink.querySelector('p:nth-child(2)').textContent = CONFIG.github.replace('https://','');
+    emailText.textContent = CONFIG.email;
   </script>
 </body>
 </html>
