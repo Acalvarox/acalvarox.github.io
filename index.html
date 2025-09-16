@@ -109,12 +109,14 @@
     <div class="flex items-end justify-between gap-4">
       <div>
         <h2 class="text-3xl md:text-4xl font-extrabold">Projects</h2>
-        <p class="mt-2 text-slate-300">Toggle between <span class="font-semibold">Current</span> and <span class="font-semibold">Completed</span>.</p>
+        <p class="mt-2 text-gray-700">Toggle between <span class="font-semibold">Current</span> and <span class="font-semibold">Completed</span>.</p>
+
       </div>
-      <div class="inline-flex rounded-2xl border border-white/10 overflow-hidden">
-        <button id="tab-current" class="px-4 py-2 text-sm font-semibold bg-white/10">Current</button>
-        <button id="tab-completed" class="px-4 py-2 text-sm font-semibold hover:bg-white/10">Completed</button>
-      </div>
+      <div class="inline-flex rounded-2xl border border-black/20 overflow-hidden">
+  <button id="tab-current"   class="px-4 py-2 text-sm font-semibold bg-black text-white">Current</button>
+  <button id="tab-completed" class="px-4 py-2 text-sm font-semibold bg-white text-black">Completed</button>
+</div>
+
     </div>
 
     <div id="grid" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
@@ -148,7 +150,7 @@
     const CONFIG = {
       resume_url: "AC_Anaenugwu_Resume.pdf", // e.g. link to Google Drive or PDF
       email: "anaenugw@msu.edu",
-      <div class="bg-white text-black rounded-xl shadow-md border border-black/10 p-5">
+      
         // Current projects
       current: [
         {
@@ -192,7 +194,7 @@
           link: "#"
         }
       ]
-    </div>
+  
     };
 
     // ====== RENDERING LOGIC ======
