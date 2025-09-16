@@ -89,68 +89,66 @@
     <div id="grid" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
   </section>
 
-  <!-- ABOUT -->
-<section id="about" class="mx-auto max-w-4xl px-4 py-16">
-  <h2 class="text-3xl md:text-4xl font-extrabold">About</h2>
+  <!-- ABOUT (teaser + read more) -->
+  <section id="about" class="mx-auto max-w-4xl px-4 py-16">
+    <h2 class="text-3xl md:text-4xl font-extrabold">About</h2>
 
-  <!-- Short teaser -->
-  <p class="mt-4 leading-relaxed" id="about-teaser">
-    I’ve always loved engineering. As a kid, it was the rush—snap two things together, see if they work, sprint to show someone.
-    That spark never left. <span class="text-blue-500 cursor-pointer" id="readMoreBtn">Read more →</span>
-  </p>
-
-  <!-- Full story (hidden by default) -->
-  <div id="about-full" class="hidden">
-    <p class="mt-4 leading-relaxed">
-      Over time, that spark grew up. I learned engineering isn’t just about making things—it’s about solving real problems:
-      taking principles off the whiteboard and turning them into systems that actually help people.
+    <p class="mt-4 leading-relaxed" id="about-teaser">
+      I’ve always loved engineering. As a kid, it was the rush—snap two things together, see if they work, sprint to show someone.
+      That spark never left. <span class="text-blue-600 cursor-pointer underline" id="readMoreBtn">Read more →</span>
     </p>
 
-    <p class="mt-4 leading-relaxed">
-      During my internship at an HVAC firm, something clicked: I don’t just think in steps—I think in <strong>systems</strong>.
-      I challenge defaults. I look for connections others miss. That mindset sharpened at SmithGroup, where I presented an
-      <em>integrated farm</em> concept: crops and a hen coop working as one loop so waste becomes input and nothing is idle.
-      It wasn’t about buzzwords; it was about balance—energy, airflow, water, labor—designed to cooperate.
-    </p>
+    <div id="about-full" class="hidden">
+      <p class="mt-4 leading-relaxed">
+        Over time, that spark grew up. I learned engineering isn’t just about making things—it’s about solving real problems:
+        taking principles off the whiteboard and turning them into systems that actually help people.
+      </p>
 
-    <p class="mt-4 leading-relaxed">
-      That’s the thread through my work: playful curiosity fused with real-world grit. I start at the root cause, then pull ideas
-      from anywhere they fit—HVAC for thermal control, manufacturing for repeatability, ag-tech for resilience, controls for
-      feedback—and shape them into one coherent system. If it survives dust, heat, budgets, and humans, it’s a win.
-    </p>
+      <p class="mt-4 leading-relaxed">
+        During my internship at an HVAC firm, something clicked: I don’t just think in steps—I think in <strong>systems</strong>.
+        I challenge defaults. I look for connections others miss. That mindset sharpened at SmithGroup, where I presented an
+        <em>integrated farm</em> concept: crops and a hen coop working as one loop so waste becomes input and nothing is idle.
+        It wasn’t about buzzwords; it was about balance—energy, airflow, water, labor—designed to cooperate.
+      </p>
 
-    <p class="mt-4 leading-relaxed">
-      You’ll see that philosophy across this portfolio: a field-repairable mini tractor, a modular rice parboiler with heat
-      recovery, a capstone dish-drying system for reusable takeout, and reliability work in industry. Different domains, same
-      approach—design for the messy world, not the lab.
-    </p>
+      <p class="mt-4 leading-relaxed">
+        That’s the thread through my work: playful curiosity fused with real-world grit. I start at the root cause, then pull ideas
+        from anywhere they fit—HVAC for thermal control, manufacturing for repeatability, ag-tech for resilience, controls for
+        feedback—and shape them into one coherent system. If it survives dust, heat, budgets, and humans, it’s a win.
+      </p>
 
-    <p class="mt-4 leading-relaxed">
-      Mechanical engineering is my palette; a world full of hard problems is my canvas; the systems I design are my
-      masterpieces-in-progress. If you’re building things that must work outside a slide deck, we’ll get along.
-    </p>
+      <p class="mt-4 leading-relaxed">
+        You’ll see that philosophy across this portfolio: a field-repairable mini tractor, a modular rice parboiler with heat
+        recovery, a capstone dish-drying system for reusable takeout, and reliability work in industry. Different domains, same
+        approach—design for the messy world, not the lab.
+      </p>
 
-    <span class="text-blue-500 cursor-pointer" id="readLessBtn">Read less ↑</span>
-  </div>
-</section>
+      <p class="mt-4 leading-relaxed">
+        Mechanical engineering is my palette; a world full of hard problems is my canvas; the systems I design are my
+        masterpieces-in-progress. If you’re building things that must work outside a slide deck, we’ll get along.
+      </p>
 
-<script>
-  const readMoreBtn = document.getElementById('readMoreBtn');
-  const readLessBtn = document.getElementById('readLessBtn');
-  const aboutTeaser = document.getElementById('about-teaser');
-  const aboutFull = document.getElementById('about-full');
+      <span class="text-blue-600 cursor-pointer underline" id="readLessBtn">Read less ↑</span>
+    </div>
+  </section>
 
-  readMoreBtn.addEventListener('click', () => {
-    aboutTeaser.classList.add('hidden');
-    aboutFull.classList.remove('hidden');
-  });
+  <script>
+    // About read-more toggle
+    const readMoreBtn = document.getElementById('readMoreBtn');
+    const readLessBtn = document.getElementById('readLessBtn');
+    const aboutTeaser = document.getElementById('about-teaser');
+    const aboutFull = document.getElementById('about-full');
 
-  readLessBtn.addEventListener('click', () => {
-    aboutFull.classList.add('hidden');
-    aboutTeaser.classList.remove('hidden');
-  });
-</script>
+    readMoreBtn.addEventListener('click', () => {
+      aboutTeaser.classList.add('hidden');
+      aboutFull.classList.remove('hidden');
+    });
 
+    readLessBtn.addEventListener('click', () => {
+      aboutFull.classList.add('hidden');
+      aboutTeaser.classList.remove('hidden');
+    });
+  </script>
 
   <!-- CONTACT -->
   <section id="contact" class="mx-auto max-w-4xl px-4 pb-24">
@@ -160,7 +158,7 @@
         <p class="font-semibold">Email</p>
         <p class="mt-1 underline" id="emailText">anaenugw@msu.edu</p>
       </a>
-      <a id="resumeCard" class="card p-5">
+      <a id="resumeCard" class="card p-5" target="_blank">
         <p class="font-semibold">Resume</p>
         <p class="mt-1 underline" id="resumeText">Download PDF</p>
       </a>
@@ -194,7 +192,7 @@
           title: "AGX Integrated Farm System",
           blurb: "Farm blueprint uniting crops and poultry into one system — waste becomes input, and every resource is used.",
           tags: ["Ag-systems", "Sustainability"],
-          link: "#"
+          link: "#",
           image: "agx-farm.jpg"
         },
         {
@@ -239,20 +237,19 @@
     const chip = (t) => `<span class="chip">${t}</span>`;
 
     function card(p){
-  const tags = (p.tags || []).map(t => `<span class="chip">${t}</span>`).join(' ');
-  const link = (p.link && p.link !== '#')
-    ? `<a href="${p.link}" target="_blank" class="mt-4 inline-block font-semibold underline">Read more</a>`
-    : '';
-  return `
-    <div class="card p-5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition">
-      ${p.image ? `<img src="${p.image}" alt="${p.title}" class="rounded-lg mb-3 h-40 w-full object-cover">` : ""}
-      <h3 class="text-lg font-semibold">${p.title}</h3>
-      <p class="mt-2 text-sm">${p.blurb}</p>
-      <div class="mt-3 flex flex-wrap gap-2">${tags}</div>
-      ${link}
-    </div>`;
-}
-
+      const tags = (p.tags || []).map(t => `<span class="chip">${t}</span>`).join(' ');
+      const link = (p.link && p.link !== '#')
+        ? `<a href="${p.link}" target="_blank" class="mt-4 inline-block font-semibold underline">Read more</a>`
+        : '';
+      return `
+        <div class="card p-5">
+          ${p.image ? `<img src="${p.image}" alt="${p.title}" class="rounded-lg mb-3 h-40 w-full object-cover">` : ""}
+          <h3 class="text-lg font-semibold">${p.title}</h3>
+          <p class="mt-2 text-sm">${p.blurb}</p>
+          <div class="mt-3 flex flex-wrap gap-2">${tags}</div>
+          ${link}
+        </div>`;
+    }
 
     function render(which='current'){
       grid.innerHTML = (CONFIG[which] || []).map(card).join('');
