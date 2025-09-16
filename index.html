@@ -195,6 +195,7 @@
           blurb: "Farm blueprint uniting crops and poultry into one system — waste becomes input, and every resource is used.",
           tags: ["Ag-systems", "Sustainability"],
           link: "#"
+          image: "agx-farm.jpg"
         },
         {
           title: "Rice Parboiler v1",
@@ -238,18 +239,20 @@
     const chip = (t) => `<span class="chip">${t}</span>`;
 
     function card(p){
-      const tags = (p.tags || []).map(chip).join(' ');
-      const link = (p.link && p.link !== '#')
-        ? `<a href="${p.link}" target="_blank" class="mt-4 inline-block font-semibold underline">Read more</a>`
-        : '';
-      return `
-        <div class="card p-5">
-          <h3 class="text-lg font-semibold">${p.title}</h3>
-          <p class="mt-2 text-sm">${p.blurb}</p>
-          <div class="mt-3 flex flex-wrap gap-2">${tags}</div>
-          ${link}
-        </div>`;
-    }
+  const tags = (p.tags || []).map(t => `<span class="chip">${t}</span>`).join(' ');
+  const link = (p.link && p.link !== '#')
+    ? `<a href="${p.link}" target="_blank" class="mt-4 inline-block font-semibold underline">Read more</a>`
+    : '';
+  return `
+    <div class="card p-5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition">
+      ${p.image ? `<img src="${p.image}" alt="${p.title}" class="rounded-lg mb-3 h-40 w-full object-cover">` : ""}
+      <h3 class="text-lg font-semibold">${p.title}</h3>
+      <p class="mt-2 text-sm">${p.blurb}</p>
+      <div class="mt-3 flex flex-wrap gap-2">${tags}</div>
+      ${link}
+    </div>`;
+}
+
 
     function render(which='current'){
       grid.innerHTML = (CONFIG[which] || []).map(card).join('');
