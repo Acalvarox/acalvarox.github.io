@@ -90,15 +90,67 @@
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="mx-auto max-w-4xl px-4 py-16">
-    <h2 class="text-3xl md:text-4xl font-extrabold">About</h2>
+<section id="about" class="mx-auto max-w-4xl px-4 py-16">
+  <h2 class="text-3xl md:text-4xl font-extrabold">About</h2>
+
+  <!-- Short teaser -->
+  <p class="mt-4 leading-relaxed" id="about-teaser">
+    I’ve always loved engineering. As a kid, it was the rush—snap two things together, see if they work, sprint to show someone.
+    That spark never left. <span class="text-blue-500 cursor-pointer" id="readMoreBtn">Read more →</span>
+  </p>
+
+  <!-- Full story (hidden by default) -->
+  <div id="about-full" class="hidden">
     <p class="mt-4 leading-relaxed">
-      At my final presentation during my internship with SmithGroup, I shared an idea I was working on — the integrated farm.
-      I wasn’t just running calculations or using all the buzzwords I knew. I realized I had built a system: one that used
-      resources fully, wasted nothing, and worked as a whole. That moment reminded me of how I think—start at the root
-      problem, connect the right dots across disciplines, then push past boundaries.
+      Over time, that spark grew up. I learned engineering isn’t just about making things—it’s about solving real problems:
+      taking principles off the whiteboard and turning them into systems that actually help people.
     </p>
-  </section>
+
+    <p class="mt-4 leading-relaxed">
+      During my internship at an HVAC firm, something clicked: I don’t just think in steps—I think in <strong>systems</strong>.
+      I challenge defaults. I look for connections others miss. That mindset sharpened at SmithGroup, where I presented an
+      <em>integrated farm</em> concept: crops and a hen coop working as one loop so waste becomes input and nothing is idle.
+      It wasn’t about buzzwords; it was about balance—energy, airflow, water, labor—designed to cooperate.
+    </p>
+
+    <p class="mt-4 leading-relaxed">
+      That’s the thread through my work: playful curiosity fused with real-world grit. I start at the root cause, then pull ideas
+      from anywhere they fit—HVAC for thermal control, manufacturing for repeatability, ag-tech for resilience, controls for
+      feedback—and shape them into one coherent system. If it survives dust, heat, budgets, and humans, it’s a win.
+    </p>
+
+    <p class="mt-4 leading-relaxed">
+      You’ll see that philosophy across this portfolio: a field-repairable mini tractor, a modular rice parboiler with heat
+      recovery, a capstone dish-drying system for reusable takeout, and reliability work in industry. Different domains, same
+      approach—design for the messy world, not the lab.
+    </p>
+
+    <p class="mt-4 leading-relaxed">
+      Mechanical engineering is my palette; a world full of hard problems is my canvas; the systems I design are my
+      masterpieces-in-progress. If you’re building things that must work outside a slide deck, we’ll get along.
+    </p>
+
+    <span class="text-blue-500 cursor-pointer" id="readLessBtn">Read less ↑</span>
+  </div>
+</section>
+
+<script>
+  const readMoreBtn = document.getElementById('readMoreBtn');
+  const readLessBtn = document.getElementById('readLessBtn');
+  const aboutTeaser = document.getElementById('about-teaser');
+  const aboutFull = document.getElementById('about-full');
+
+  readMoreBtn.addEventListener('click', () => {
+    aboutTeaser.classList.add('hidden');
+    aboutFull.classList.remove('hidden');
+  });
+
+  readLessBtn.addEventListener('click', () => {
+    aboutFull.classList.add('hidden');
+    aboutTeaser.classList.remove('hidden');
+  });
+</script>
+
 
   <!-- CONTACT -->
   <section id="contact" class="mx-auto max-w-4xl px-4 pb-24">
