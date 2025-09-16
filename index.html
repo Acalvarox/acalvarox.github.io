@@ -9,16 +9,28 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{--ring: 0 0 0 3px rgba(59,130,246,.3)}
-    html{font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"}
-    .glass{backdrop-filter:saturate(180%) blur(10px); background:rgba(255,255,255,.08);}
-  </style>
+ <style>
+  :root {
+    --ring: 0 0 0 3px rgba(59,130,246,.3);
+  }
+
+  html {
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 
+      "Apple Color Emoji", "Segoe UI Emoji";
+  }
+
+  .glass {
+    backdrop-filter: saturate(180%) blur(10px);
+    background: rgba(255,255,255,.08);
+  }
+
+  body {
+    background-color: #C0C0C0; /* metallic silver */
+    color: #111111; /* matte black text */
+  }
+</style>
 </head>
-body {
-  background-color: #C0C0C0; /* metallic silver hex */
-  color: #111111; /* matte black text */
-}
+
   <!-- NAV -->
   <header class="sticky top-0 z-20 border-b border-white/10 bg-slate-950/70 glass">
     <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
@@ -51,7 +63,7 @@ body {
         <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
          Alvaro Chukwuebuka Anaenugwu</span> 
           </h1>
-        <p class="mt-5 text-slate-300 text-lg md:text-xl">
+        <p class="mt-5 text-black text-lg md:text-xl">
          I am a mechanical engineer 'trainee'<br />
           Graduation drops the “trainee” in December.<br /> 
           The responsibility is already mine,<br />
