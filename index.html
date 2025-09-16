@@ -147,6 +147,32 @@
   <script>
     // ====== USER CONFIG (edit these) ======
     const CONFIG = {
+      <script>
+  // --- card template ---
+  function projectCard(p) {
+    const tags = (p.tags || [])
+      .map(t => `<span class="px-2 py-0.5 text-xs border border-black/20 rounded">${t}</span>`)
+      .join(' ');
+    const link = p.link && p.link !== "#"
+      ? `<a href="${p.link}" target="_blank" class="mt-4 inline-block text-sm font-semibold underline">Read more</a>`
+      : "";
+
+    return `
+      <div class="bg-white text-black rounded-xl shadow-md border border-black/10 p-5">
+        <h3 class="text-lg font-semibold">${p.title}</h3>
+        <p class="mt-2 text-sm">${p.blurb}</p>
+        <div class="mt-3 flex flex-wrap gap-2">${tags}</div>
+        ${link}
+      </div>
+    `;
+    // (use solid white cards so they pop on the silver bg)
+  }
+
+  // --- render helper ---
+  function render(list) {
+    const grid = document.getElementById('grid');
+    grid.innerHTML = (list || []).map(
+
       resume_url: "AC_Anaenugwu_Resume.pdf", // e.g. link to Google Drive or PDF
       email: "anaenugw@msu.edu",
       
